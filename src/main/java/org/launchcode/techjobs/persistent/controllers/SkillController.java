@@ -51,7 +51,7 @@ public class SkillController {
         if (result.isPresent()) {
             Skill skill = result.get();
             model.addAttribute("skill", skill);
-            return "employers/view";
+            return "skills/view";
         } else {
             return "redirect:../";
         }

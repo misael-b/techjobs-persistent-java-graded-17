@@ -60,19 +60,20 @@ public class HomeController {
         if (errors.hasErrors()) {
 	    model.addAttribute("title", "Add Job");
             return "add";
-        }else{
+        }
             Optional<Employer> employer = employerRepository.findById(employerId);
             if (employer.isPresent()){
                 Employer result = employer.get();
                 newJob.setEmployer(result);
 
             }
+
             List<Skill> skillObjs = (List<Skill>) skillRepository.findAllById(skills);
             newJob.setSkills(skillObjs);
             jobRepository.save(newJob);
 
 
-        }
+
 
 
 

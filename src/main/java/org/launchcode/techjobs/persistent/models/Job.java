@@ -13,10 +13,10 @@ public class Job  extends AbstractEntity{
 
     @ManyToOne(cascade = CascadeType.ALL)
     @Valid
-    @NotNull
     private Employer employer;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
+    @Valid
     private List<Skill> skills = new ArrayList<>();
 
 
